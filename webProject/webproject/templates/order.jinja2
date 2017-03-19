@@ -1,0 +1,127 @@
+{% extends "base_base.jinja2" %}
+{% block mainData %}
+          
+     <div class="col-md-12 text-center top_n">
+        Оформление заказа
+      </div>
+      <div class="col-md-12 bordered">
+        <div class="row">
+          <div class="col-md-6 text-center borderer">
+            <span class="top_na">Новый пользователь</span>
+            <form action="/register" method="POST">
+              {% for m in message %}
+                <div class="form-element">
+                  <div class="col-md-8 col-md-offset-2">
+                    <p><strong>{{m}}</strong></p>
+                  </div>
+                </div>
+              {% endfor %}
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите имя</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="text" placeholder="Имя" class="form-control" name="name">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите фамилию</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="text" placeholder="Фамилия" class="form-control" name="secondName">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите телефон</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="tel" placeholder="Телефон" class="form-control" name="tel">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите e-mail</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="email" placeholder="e-mail" class="form-control" name="mail">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите логин</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="text" placeholder="Логин" class="form-control" name="login">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите пароль</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="password" placeholder="Пароль" class="form-control" name="password">
+                </div>
+              </div>
+
+              <div class="row form-element">
+                <div class="col-md-5 text-left col-md-offset-1">
+                   <p>Введите подтверждение пароля</p>
+                </div>
+                <div class="col-md-5">
+                  <input type="password" placeholder="Подтверждение пароля" class="form-control" name="confirm">
+                </div>
+              </div>
+
+              <div class="form-element">
+                <div class="col-md-6 col-md-offset-3">
+                  <input type="submit" value="Зарегестрироваться" class="form-control">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6 text-center">
+            <span class="top_na">Зарегистрированный пользователь</span>
+            <div class="col-md-12">
+              <form action="/login" method="POST">
+              {% for m in message2 %}
+                <div class="form-element">
+                  <div class="col-md-8 col-md-offset-2">
+                    <p><strong>{{m}}</strong></p>
+                  </div>
+                </div>
+              {% endfor %}
+                <div class="row form-element">
+                  <div class="col-md-5 text-left col-md-offset-1">
+                     <p>Введите логин</p>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" placeholder="Логин" class="form-control" name="login">
+                  </div>
+                </div>
+                <div class="row form-element">
+                  <div class="col-md-5 text-left col-md-offset-1">
+                     <p>Введите пароль</p>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="password" placeholder="Пароль" class="form-control" name="password">
+                  </div>
+                </div>
+                <div class="form-element">
+                  <div class="col-md-6 col-md-offset-3">
+                    <input type="submit" value="Войти" class="form-control">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

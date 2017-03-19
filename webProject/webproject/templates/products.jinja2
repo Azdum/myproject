@@ -1,0 +1,86 @@
+{% extends "base.jinja2" %}
+{% block data %}
+		
+
+      <div class="row">
+        <table class="col-md-6 col-md-offset-3">
+          <tr>
+            <td class="col-md-2">
+                <img src="/static/images/busket.png" alt="">
+            </td >
+            <td class="col-md-10">
+              <span class="big">Панель админа</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <table class="col-md-6 col-md-offset-3">
+          <tr>
+            <td class="col-md-4">
+              <a href="admin">Заказы</a>
+            </td >
+            <td class="col-md-4">
+              <a href="products">Товары</a>
+            </td>
+            <td class="col-md-4">
+              <form action="logoutAdmin">
+                <input type="submit" value="Выйти" class="form-control">
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
+        <form action="/addProduct"  method="POST" enctype="multipart/form-data">
+          <div class="bord">
+            <div class="col-md-3">
+              <input type="file" accept="image/jpeg,image/png,image/gif" class="form-control" name="picture">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="Название" name="name">
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" placeholder="Цена" name="cost">
+            </div>
+            <div class="col-md-3">
+              <input type="submit" class="form-control" value="Добавить">
+            </div>
+          </div>
+        </form>
+        <table class="table table-bordered">
+          <tr>
+            <th class="col-md-3">Изображение</th>
+            <th class="col-md-3">Название</th>
+            <th class="col-md-3">Цена за шт.</th>
+            <th class="col-md-3"></th>
+          </tr> 
+          {% for pr in products %}
+          <tr>
+
+            <td>
+              <div class="col-md-10 col-md-offset-1 row">
+                <img src="{{pr.Picture}}" alt="">
+              </div>
+            </td>
+
+            <td>
+              <div class="row">
+                {{ pr.Name }}
+              </div>
+            </td>
+            <td>
+              <div class="center-block pull-right">
+                {{pr.Cost}} руб
+              </div>
+            </td>
+            <td>
+              <div class="center-block pull-right">
+                <a href="/deleteProduct/{{pr.id}}">Удалить</a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>    
+
+{% endblock %}

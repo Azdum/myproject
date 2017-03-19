@@ -1,0 +1,28 @@
+{% extends "base.jinja2" %}
+{% block data %}
+      <header class="header row">
+        <div class="center col-md-4">
+          <a class="a mainLink" href="/">Скрепочка</a>
+        </div>
+        <div class="center col-md-6">
+          <form action="/" method="POST">
+            <div class="col-md-9 row">
+              <input type="text" placeholder="Поиск" class="form-control search" name="name">
+            </div>
+            <div class="col-md-3 row">
+              <input type="submit" value="Поиск" class="form-control search">
+            </div>
+          </form>
+        </div>
+        <a href="/buy" class="center col-md-1 pull-right">
+          <img src="/static/images/recycleBin.png" class="recycle" alt="">
+        </a>
+      </header>
+      {% block mainData %} {% endblock %}
+    </div>
+    <footer class="footer col-md-12">
+      <div class="row">
+        <p class="col-md-9 col-md-offset-1">При поддержке Pyramid  |  Все права защищены © 2017 </p>
+      </div>
+    </footer>
+{% endblock %}

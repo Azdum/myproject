@@ -1,0 +1,99 @@
+{% extends "base_base.jinja2" %}
+{% block mainData %}
+
+
+      <div class="row">
+        <table class="col-md-6 col-md-offset-3">
+          <tr>
+            <td class="col-md-3">
+                <img src="images/busket.png" alt="">
+            </td >
+            <td class="col-md-9">
+              <span class="big">Корзина покупок</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="col-md-12 bordered">
+        <table class="table table-bordered">
+          <tr>
+            <th class="col-md-2">Изображение</th>
+            <th class="col-md-3">Название</th>
+            <th class="col-md-2">Колличество</th>
+            <th class="col-md-2">Цена за шт.</th>
+            <th class="col-md-2">Всего</th>
+            <th class="col-md-1"></th>
+          </tr> 
+          <tr>
+
+            <td>
+              <div class="col-md-10 col-md-offset-1 row">
+                <img src="images/скрепка.JPG" alt="">
+              </div>
+            </td>
+
+            <td>
+              <div class="row">
+                Cкрепка
+              </div>
+            </td>
+
+            <td>
+              <div class="row">
+                <form action="">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" value="1">
+                  </div>
+                  <div class="col-md-8">
+                    <strong>
+                      <input type="submit" class="bluee form-control" value="Обновить">
+                    </strong>
+                  </div>
+                </form>
+              </div>
+            </td>
+            <td>
+              <div class="center-block pull-right">
+                37 руб
+              </div>
+            </td>
+            <td>
+              <div class="center-block pull-right">
+                37 руб
+              </div>
+            </td>
+
+            <td>
+              <div class="col-md-10 col-md-offset-1">
+                <a href="">
+                  <img src="images/delete.png" alt="">
+                </a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="col-md-6 col-md-offset-6">
+          <span class="check">
+            <div class="row">
+              <div class="pull-left">
+                <p> Итого </p>
+              </div>
+              <div class="pull-right">
+                37 руб
+              </div>
+            </div>
+          </span>
+        </div>
+        <div class="row">
+          <div class="col-md-3 pull-left">
+            <a href="" class="form-control">Продолжить покупку</a>
+          </div>
+          <div class="col-md-offset-6 col-md-3 pull-right">
+            <a href="" class="form-control">Оформить заказ</a>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+{% endblock %}

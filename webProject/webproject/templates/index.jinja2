@@ -1,0 +1,22 @@
+{% extends "base_base.jinja2" %}
+{% block mainData %}
+      <div class="row">
+
+      {% for pr in Products %}
+
+        <div class="col-md-3">
+          <div class ="col-md-12 element">
+            <p><img src="{{pr.Picture}}" alt="" class="element"></p>
+            <p class="text-center"><span class="name pull-center">{{pr.Name}}</span></p>
+            <p class="text-center"><span class="cost">{{pr.Cost}}</span></p>
+            <p>
+              <form action="/buyProduct/{{pr.id}}" class="col-md-8 col-md-offset-2">
+                <input type="submit" value="Купить" class="form-control buy">
+              </form>
+            </p>
+          </div>
+        </div>
+
+      {% endfor%}
+      </div>
+{% endblock %}
